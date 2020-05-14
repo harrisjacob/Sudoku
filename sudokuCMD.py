@@ -3,12 +3,10 @@
 pSize = 9
 pSect = int(pow(pSize,0.5))
 
-
 def fullLine():
 	for i in range(pSize*3+pSize+1):
 		print("-", end='')
 	print()
-
 
 def printBoard(printBoard):
 	fullLine()
@@ -34,8 +32,6 @@ def checkRow(checkBoard, r, v):
 			return False
 	return True
 
-
-
 def checkCol(checkBoard, c, v):
 	for row in checkBoard:
 		if row[c] == v:
@@ -60,9 +56,8 @@ def solveBoard(trialBoard, r, c):
 	if(c < 0 or c > pSize):
 		return False
 
-	
 	if(trialBoard[r][c]!=0):
-		
+	
 		if(c<pSize-1):
 			return solveBoard(trialBoard, r, c+1)
 		elif(r<pSize-1):
@@ -81,54 +76,12 @@ def solveBoard(trialBoard, r, c):
 				elif(r<pSize-1):
 					if solveBoard(trialBoard, r+1, 0):
 						return True
-
-
 				else:
 					printBoard(trialBoard)
 					return True
 			v+=1
 		trialBoard[r][c] = 0
 		return False
-
-
-'''
-zeroBoard = [
-[ 0, 0, 0, 0, 0, 0, 0, 0, 0],
-[ 0, 0, 0, 0, 0, 0, 0, 0, 0],
-[ 0, 0, 0, 0, 0, 0, 0, 0, 0],
-[ 0, 0, 0, 0, 0, 0, 0, 0, 0],
-[ 0, 0, 0, 0, 0, 0, 0, 0, 0],
-[ 0, 0, 0, 0, 0, 0, 0, 0, 0],
-[ 0, 0, 0, 0, 0, 0, 0, 0, 0],
-[ 0, 0, 0, 0, 0, 0, 0, 0, 0],
-[ 0, 0, 0, 0, 0, 0, 0, 0, 0]
-]
-
-	bA = [
-[ 8, 0, 0, 9, 3, 0, 0, 0, 2],
-[ 0, 0, 9, 0, 0, 0, 0, 4, 0],
-[ 7, 0, 2, 1, 0, 0, 9, 6, 0],
-[ 2, 0, 0, 0, 0, 0, 0, 9, 0],
-[ 0, 6, 0, 0, 0, 0, 0, 7, 0],
-[ 0, 7, 0, 0, 0, 6, 0, 0, 5],
-[ 0, 2, 7, 0, 0, 8, 4, 0, 6],
-[ 0, 3, 0, 0, 0, 0, 5, 0, 0],
-[ 5, 0, 0, 0, 6, 2, 0, 0, 8]
-]
-
-
-sbA = [
-[ 8, 4, 6, 9, 3, 7, 1, 5, 2],
-[ 3, 1, 9, 6, 2, 5, 8, 4, 7],
-[ 7, 5, 2, 1, 8, 4, 9, 6, 3],
-[ 2, 8, 5, 7, 1, 3, 6, 9, 4],
-[ 4, 6, 3, 8, 5, 9, 2, 7, 1],
-[ 9, 7, 1, 2, 4, 6, 3, 8, 5],
-[ 1, 2, 7, 5, 9, 8, 4, 3, 6],
-[ 6, 3, 8, 4, 7, 1, 5, 2, 9],
-[ 5, 9, 4, 3, 6, 2, 7, 1, 8]
-]
-'''
 
 def main():
 
