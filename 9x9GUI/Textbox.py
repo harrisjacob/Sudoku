@@ -43,6 +43,9 @@ class TextBox:
 			else:
 				self.box_color = config.inactive_color
 
+	def update(self):
+		self.render = config.font.render(self.text, True, config.font_color)
+
 	def draw(self, screen):
 		
 		pygame.draw.rect(screen, self.box_color, self.box, config.outline_thickness)
