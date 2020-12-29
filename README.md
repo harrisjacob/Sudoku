@@ -8,7 +8,7 @@ If no solution exists (i.e. the puzzle the user input is invalid) a warning is p
 The **ProofOfConcept** directory contains some scripts used to demo some of the features of the textbox class as well as the Sudoku board bitmap drawing, both of which were later implemented in the **solve9x9.py** script.
 
 ## Use
-To use the GUI, a XMing server must be started.
+PyGame must be installed to run the demo module
 
 ## Implementation
 The algorithm used in both **sudokuCMD.py** and **solve9x9.py** is a recursive backtracking algorithm.
